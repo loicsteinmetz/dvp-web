@@ -7,6 +7,7 @@ class Folio < ApplicationRecord
   validates :description, presence: true
   validates :techs, presence: true
   validates :description_mini, presence: true
+  validates :order, presence: true
   has_one_attached :capture
   validate :capture?
   validate :img_validation
