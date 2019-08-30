@@ -1,0 +1,2 @@
+class Folio < ApplicationRecord
+end

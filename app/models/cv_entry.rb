@@ -1,0 +1,2 @@
+class CvEntry < ApplicationRecord
+end
