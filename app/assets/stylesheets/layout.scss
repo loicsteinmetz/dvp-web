@@ -1,4 +1,43 @@
-*{
+// fonts
+.navbar-nav a{
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  font-size: 18px;
+}
+footer{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right:0;
+  strong{
+    font-weight: 800;
+  }
+}
+
+//! jumbotron height and background
+.jumbotron{
+  height: 400px;
+}
+
+// responsive adjustments for header
+@media screen and (max-width: 576px) {
+  .jumbotron {
+    order: 2;
+    height: 300px;
+  }
+  .nav {
+    order: 1;
+  }
+}
+
+// ajustments for navbar-toggler
+@media screen and (min-width: 577px) {
+  .navbar-toggler{
+    margin-top: -75px;
+    position: relative;
+    top: -20px;
+    left: 20px;
+  }
 }
