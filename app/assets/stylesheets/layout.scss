@@ -16,8 +16,10 @@ footer{
   }
 }
 
-//! jumbotron height and background
+// jumbotron height and background
 .jumbotron{
+  background-image: url('hero.png');
+  background-size: cover;
   height: 400px;
 }
 
