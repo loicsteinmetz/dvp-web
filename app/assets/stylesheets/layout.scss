@@ -18,19 +18,30 @@ footer{
 
 // jumbotron height and background
 .jumbotron{
-  background-image: url('hero.png');
+  background-image: url('hero');
   background-size: cover;
   height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  img{
+    width: 70%;
+    max-width: 300px;
+    position: relative;
+    left: -3%;
+  }
+}
+
+// responsive adjustments for jumbotron background
+@media screen and (max-width: 576px) {
+  .jumbotron {
+    background-size: auto 300px;
+  }
 }
 
 // responsive adjustments for header
 @media screen and (max-width: 576px) {
   .jumbotron {
-    order: 2;
     height: 300px;
-  }
-  .nav {
-    order: 1;
   }
 }
 
@@ -42,4 +53,25 @@ footer{
     top: -20px;
     left: 20px;
   }
+}
+
+// adjustments for logo_nav
+nav img{
+  height: 30px;
+}
+
+// nav-links
+.navbar-nav a{
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(to top, transparent 0px, transparent 5.9px, #343a40 6px, #343a40 7px, transparent 7.1px) no-repeat left bottom;
+  background-size: 0 100%;
+  transition: background-size 0.2s;
+}
+.navbar-nav a:hover{
+  background-size: 100% 100%;
+}
+a.on{
+  text-decoration: none;
+  background: linear-gradient(to top, transparent 0px, transparent 5.9px, #343a40 6px, #343a40 7px, transparent 7.1px) no-repeat left bottom;
 }
