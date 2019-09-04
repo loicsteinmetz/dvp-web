@@ -75,3 +75,15 @@ a.on{
   text-decoration: none;
   background: linear-gradient(to top, transparent 0px, transparent 5.9px, #343a40 6px, #343a40 7px, transparent 7.1px) no-repeat left bottom;
 }
+
+// responsive color for nav toggle-icon
+@import './Bootstrap_over.scss';
+@media screen and (max-width: 576px) {
+  .navbar-toggler-icon {
+    background-image: $navbar-light-toggler-icon-bg !important;
+  }
+  .navbar-toggler {
+    color: $navbar-light-color;
+    border-color: $navbar-light-toggler-border-color !important;
+  }
+}
