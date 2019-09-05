@@ -1,3 +1,29 @@
 // Place all the styles related to the Static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// row-fluid category to apply backgrounds in whole width
+@media screen and (min-width: 577px) {
+  .row-fluid{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
+@media screen and (min-width: 767px) {
+  .row-fluid{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+// ajdusts responsive order
+}
+@media screen and (max-width: 1199px) {
+  #hero-2{
+    flex-direction: column-reverse;
+  }
+}
+
+// imgs
+#hero img{
+  width: 100%;
+}
