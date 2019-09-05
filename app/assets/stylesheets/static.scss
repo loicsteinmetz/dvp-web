@@ -5,19 +5,19 @@
 // row-fluid category to apply backgrounds in whole width
 @media screen and (min-width: 577px) {
   .row-fluid{
-    padding-left: 5% !important;
-    padding-right: 5% !important;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 @media screen and (min-width: 767px) {
   .row-fluid{
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 8%;
+    padding-right: 8%;
   }
 
 // ajdusts responsive order
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 991px) {
   #hero-2{
     flex-direction: column-reverse;
   }
