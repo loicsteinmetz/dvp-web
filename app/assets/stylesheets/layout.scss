@@ -4,7 +4,7 @@
 *{
   font-family: 'Roboto', sans-serif;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6, small{
   font-family: 'Montserrat', sans-serif;
 }
 h1{
@@ -14,6 +14,10 @@ h1{
 h2{
   font-size: 30px;
   font-weight: 800;
+}
+h3{
+  font-size: 28px;
+  font-weight: 500;
 }
 .navbar-nav a{
   font-family: 'Montserrat', sans-serif;
@@ -101,3 +105,4 @@ a.on{
     border-color: $navbar-light-toggler-border-color !important;
   }
 }
+
