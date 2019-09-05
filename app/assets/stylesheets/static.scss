@@ -14,9 +14,8 @@
     padding-left: 8%;
     padding-right: 8%;
   }
-
-// ajdusts responsive order
 }
+// ajdusts responsive order
 @media screen and (max-width: 991px) {
   #hero-2{
     flex-direction: column-reverse;
@@ -26,4 +25,29 @@
 // imgs
 #hero img{
   width: 100%;
+}
+.serv img{
+  height: 35px;
+  width: 35px;
+  margin: 5px 0;
+  opacity: 0.9;
+  &:hover{
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 991px) {
+  .serv img{
+    margin: 0 10px;
+  }
+}
+.id img{
+  height: 150px;
+  border: 5px solid #6c757d; // secondary
+  border-radius: 100%;
+}
+
+// lines
+.line{
+  height: 1.8em;
+  border-bottom: 5px solid #343a40; // dark
 }
