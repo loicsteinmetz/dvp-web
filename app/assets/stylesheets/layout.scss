@@ -4,7 +4,7 @@
 *{
   font-family: 'Roboto', sans-serif;
 }
-h1,h2,h3,h4,h5,h6, small, .card-header, strong, footer span{
+h1,h2,h3,h4,h5,h6, small, .card-header, strong, footer span, .btn{
   font-family: 'Montserrat', sans-serif;
 }
 h1{
@@ -19,7 +19,7 @@ h3{
   font-size: 28px;
   font-weight: 500;
 }
-.card-header{
+.card-header, .btn{
   font-weight: 900;
   font-size: 22px;
   color: white;
