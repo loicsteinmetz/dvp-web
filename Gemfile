@@ -70,4 +70,4 @@ gem 'jquery-rails'
 # Popper js
 gem 'popper_js', '~> 1.14.5'
 # Dotenv
-gem 'dotenv'
+gem 'dotenv-rails'

@@ -10,7 +10,7 @@ ActionMailer::Base.smtp_settings = {
   :password => ENV['OVH_PWD'],
   :domain => 'dvp-web.fr',
   :address => 'ssl0.ovh.net',
-  :port => 993,
+  :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
 }
