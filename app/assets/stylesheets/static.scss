@@ -54,6 +54,9 @@
 #portfolio_prev img{
   width: 100%;
 }
+#tech_hero img{
+  width: 100%;
+}
 
 // lines
 .line{
@@ -63,4 +66,10 @@
 .vertical_line{
   width: 30px;
   border-radius: 50px;
+}
+
+@media screen and (min-width: 577px) {
+  .tech_entries{
+    width: 90%;
+  }
 }
