@@ -1,7 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default from: 'contact@dvp-web.fr'
-
   def contact_email
-    
+    mail(to: 'loic@yopmail.com', subject: 'Contact :') 
   end
 end

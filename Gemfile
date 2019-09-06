@@ -50,6 +50,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # graphic interface for db
   gem 'rails_db'
+  # email test
+  gem "letter_opener"
 end
 
 group :test do
@@ -67,3 +69,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 # Popper js
 gem 'popper_js', '~> 1.14.5'
+# Dotenv
+gem 'dotenv'
