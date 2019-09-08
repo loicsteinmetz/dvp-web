@@ -1,0 +1,14 @@
+<% if flash[:alert] %>
+  <div class='row mt-5'>
+    <div class='col col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 p-5'>
+      <div class='alert alert-danger'>
+        <p>Le message n'a pas pu être envoyé :</p>
+        <ul class='my-0 py-0'>
+          <% flash[:alert].each do |alert| %>
+            <li><%= alert %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% end %>
