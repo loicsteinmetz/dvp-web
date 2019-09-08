@@ -3,7 +3,8 @@ class MailerController < ApplicationController
 
   def contact_email
     ContactMailer.contact_email.deliver_now
-    redirect_to root_path
+    flash[:notice] = 'Message envoyé'
+    redirect_to '/home#contact'
   end
 
   private
