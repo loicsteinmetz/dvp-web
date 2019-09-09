@@ -3,7 +3,7 @@ class MailerController < ApplicationController
 
   def contact_email
     if flash[:alert].empty?
-      ContactMailer.contact_email.deliver_now
+      ContactMailer.contact_email(params).deliver_now
       flash[:notice] = 'Message envoyé'
     end
 
