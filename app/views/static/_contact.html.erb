@@ -1,4 +1,4 @@
-<div class='container pb-5' id='contact'>
+<div class='container py-5' id='contact'>
   <div class="row mb-5">
     <div class='col d-lg-flex d-none line'>
     </div>
@@ -7,16 +7,16 @@
     </div>
   </div>
   
-  <%= render 'contact_mailer/flash' %>
+  <%= render 'flash_contact' %>
 
   <div class='row'>
     <div class='col-lg-6 col-sm-10 offset-lg-3 offset-sm-1 text-dark'>
       <%= form_tag('/mail', method: 'post') do %>
-        <div class='form-group col-8 pl-0'>
+        <div class='form-group col-sm-8 p-0'>
           <%= label_tag 'last_name', 'Nom *' %>
-          <%= text_field_tag 'last_name', nil, placeholder: 'Prénom', class: 'form-control' %>
+          <%= text_field_tag 'last_name', nil, placeholder: 'Nom', class: 'form-control' %>
         </div>
-        <div class='form-group col-8 pl-0'>
+        <div class='form-group col-sm-8 p-0'>
           <%= label_tag 'first_name', 'Prénom *' %>
           <%= text_field_tag 'first_name', nil, placeholder: 'Prénom', class: 'form-control' %>
         </div>
@@ -28,20 +28,20 @@
           <%= label_tag 'email_validation', 'Confirmation de l\'adresse email *'  %>
           <%= email_field_tag 'email_validation', nil, placeholder: 'Confirmer l\'email', class: 'form-control' %>
         </div>
-        <div class='form-group col-6 pl-0'>
+        <div class='form-group col-sm-6 p-0'>
           <%= label_tag 'tel', 'Téléphone'  %>
           <%= telephone_field_tag 'tel', nil, placeholder: 'Téléphone', class: 'form-control' %>
         </div>
-        <div class='form-group col-6 pl-0'>
+        <div class='form-group col-sm-6 p-0'>
           <%= label_tag 'cie', 'Société' %>
           <%= text_field_tag 'cie', nil, placeholder: 'Société', class: 'form-control' %>
         </div>
-        <div class='form-group col-6 pl-0'>
+        <div class='form-group col-sm-6 p-0'>
           <%= label_tag 'date', 'Date limite du projet ?' %>
           <%= date_field_tag 'date', nil, class: 'form-control' %>
         </div>
         <div class='form-group'>
-          <%= label_tag 'message', 'Message' %>
+          <%= label_tag 'message', 'Message *' %>
           <%= text_area_tag 'message', nil, placeholder: 'Votre projet...', class: 'form-control', rows: 10 %>
         </div>
         <div class='mt-5 text-center'>
