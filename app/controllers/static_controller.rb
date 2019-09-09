@@ -7,4 +7,8 @@ class StaticController < ApplicationController
     @title = 'DVP Web - Portfolio | Loïc Steinmetz, développeur freelance'
   end
 
+  def mentions_legales
+    @title = 'DVP Web - Mentions légales | Loïc Steinmetz, développeur freelance'
+  end
+
 end
