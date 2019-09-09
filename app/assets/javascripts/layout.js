@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
-  let str = 'portfolio';
+  let str = 'mentions_legales';
   let url = document.documentURI;
 
   // links:hover
   let home = document.querySelectorAll('.nav-item a')[0];
-  let portfolio = document.querySelectorAll('.nav-item a')[1];
+  // let portfolio = document.querySelectorAll('.nav-item a')[1];
   if (url.includes(str)){
     portfolio.classList.add('on')
   } else {
