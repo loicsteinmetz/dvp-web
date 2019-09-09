@@ -1,0 +1,11 @@
+if ($('.alert')) {
+  $('.alert').parent().parent().remove();
+};
+
+$('div.mb-5:nth-child(1)').after("<%= j render 'static/flash_contact' %>");
+
+<% if flash[:notice] %>
+  for (let i = 0 ; i <= 7 ; i++){
+    $('form .form-control')[i].value = "";
+  };
+<% end %>

@@ -2,9 +2,17 @@ class MailerController < ApplicationController
   before_action :validations, only: [:contact_email]
 
   def contact_email
-    ContactMailer.contact_email.deliver_now
-    flash[:notice] = 'Message envoyé'
-    redirect_to '/home#contact'
+    if flash[:alert].empty?
+      ContactMailer.contact_email.deliver_now
+      flash[:notice] = 'Message envoyé'
+    end
+
+    respond_to do |format|
+      format.html do 
+        redirect_to '/home#contact'
+      end
+      format.js {}
+    end
   end
 
   private
@@ -16,10 +24,7 @@ class MailerController < ApplicationController
     errors << 'Email ou confirmation d\'email manquant' unless email?
     errors << 'Les adresses emails ne concordent pas' unless valid_email?
     errors << 'Message vide' unless message?
-    unless errors.empty?
-      flash[:alert] = errors
-      redirect_to '/home#contact'
-    end
+    errors.empty? ? flash[:alert] = [] : flash[:alert] = errors
   end
 
   def first_name?

@@ -1,4 +1,4 @@
-<% if flash[:alert] %>
+<% if !flash[:alert].empty? %>
   <div class='row mb-3'>
     <div class='col col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 p-0'>
       <div class='alert alert-danger'>
