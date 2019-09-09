@@ -1,22 +1,24 @@
-<% if !flash[:alert].empty? %>
-  <div class='row mb-3'>
-    <div class='col col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 p-0'>
-      <div class='alert alert-danger'>
-        <p>Le message n'a pas pu être envoyé :</p>
-        <ul class='my-0 py-0'>
-          <% flash[:alert].each do |alert| %>
-            <li><%= alert %></li>
-          <% end %>
-        </ul>
+<% if flash[:alert] || flash[:notice] %>
+  <% if !flash[:alert].empty? %>
+    <div class='row mb-3'>
+      <div class='col col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 p-0'>
+        <div class='alert alert-danger'>
+          <p>Le message n'a pas pu être envoyé :</p>
+          <ul class='my-0 py-0'>
+            <% flash[:alert].each do |alert| %>
+              <li><%= alert %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-<% elsif flash[:notice] %>
-  <div class='row mb-3'>
-    <div class='col col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 p-0'>
-      <div class='alert alert-success'>
-        <p><%= flash[:notice] %></p>
+  <% elsif flash[:notice] %>
+    <div class='row mb-3'>
+      <div class='col col-lg-8 col-sm-10 offset-lg-2 offset-sm-1 p-0'>
+        <div class='alert alert-success'>
+          <p><%= flash[:notice] %></p>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
