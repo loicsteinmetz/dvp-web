@@ -28,7 +28,7 @@
 }
 
 // imgs
-#hero img{
+#hero img, #folio_prev img, #portfolio img, #tech img,{
   width: 100%;
 }
 .serv img{
@@ -45,20 +45,19 @@
     margin: 0 10px;
   }
 }
-.id img{
+.id div{
   height: 150px;
   width: 150px;
   border: 5px solid #6c757d; // secondary
   border-radius: 100%;
+  overflow: hidden;
 }
-#folio_prev img{
+.id img{
   width: 100%;
-}
-#portfolio img{
-  width: 100%;
-}
-#tech img{
-  width: 100%;
+  position: relative;
+  //? Special properties
+  top: -20px;
+  left: -5px;
 }
 
 // lines
