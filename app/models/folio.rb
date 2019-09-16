@@ -15,14 +15,14 @@ class Folio < ApplicationRecord
   private
 
   def capture?
-    errors.add(:base, "Image must be attached to the event") unless self.capture.attached?
+    errors[:capture] << "Image must be attached to the event" unless self.capture.attached?
   end
 
   def img_validation
     if self.capture.attached?
       if !self.capture.blob.content_type.starts_with?('image/')
         self.capture.purge
-        errors[:base] << 'Wrong format for your image'
+        errors[:capture] << 'Wrong format for your image'
       end
     end
   end
