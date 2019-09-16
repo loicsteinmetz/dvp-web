@@ -4,12 +4,14 @@
 
 ## Techs
 
-- Ruby / Ruby on Rails ![ruby](/readme/ruby.png)
-- PostgreSQL ![postgre](/readme/postgre.png)
-- HTML 5 ![html](/readme/html.png)
-- CSS (+ Sass) ![css](/readme/css.png)
-- Bootstrap ![bootstrap](/readme/bootstrap.png)
-- Javascript (+ jQuery) ![js](/readme/js.png)
+![ruby](/readme/ruby.png) ![postgre](/readme/postgre.png) ![html](/readme/html.png) ![css](/readme/css.png) ![bootstrap](/readme/bootstrap.png) ![js](/readme/js.png)
+
+- Ruby / Ruby on Rails 
+- PostgreSQL 
+- HTML 5 
+- CSS (+ Sass) 
+- Bootstrap 
+- Javascript (+ jQuery) 
 
 ## Database
 
