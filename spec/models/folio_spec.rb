@@ -14,7 +14,6 @@ RSpec.describe Folio, type: :model do
       expect(@folio).to be_a(Folio)
       expect(@folio).to be_valid
     end
-
     describe "title" do
       it "should not be valid without title" do
         bad_folio = Folio.new(website: "https://website.com", work: "Lorem ipsum dolor sit amet", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", techs: "Ruby, JS, Html, Rails, etc...", description_mini: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", order: 1)
