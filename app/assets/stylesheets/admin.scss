@@ -1,3 +1,15 @@
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables.scss";
+
+
+.nav-tabs a{
+  background: none !important;
+  color: $blue !important;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+.nav-tabs a.active{
+  font-weight: 900;
+}
