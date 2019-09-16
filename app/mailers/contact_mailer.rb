@@ -7,6 +7,6 @@ class ContactMailer < ApplicationMailer
     @cie = params[:cie]
     @date = params[:date]
     @message = params[:message]
-    mail(to: ENV['PERSO_MAIL'], subject: "Contact : #{@last_name} #{@first_name}", from: @email) 
+    mail(to: ENV['PERSO_MAIL'], subject: "Contact : #{@first_name} #{@last_name}", from: @email) 
   end
 end

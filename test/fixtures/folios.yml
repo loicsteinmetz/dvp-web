@@ -3,15 +3,17 @@
 one:
   title: MyString
   website: MyString
-  type: 
+  work: 
   description: MyText
   techs: MyText
   description_mini: MyText
+  order: myInteger
 
 two:
   title: MyString
   website: MyString
-  type: 
+  work: 
   description: MyText
   techs: MyText
   description_mini: MyText
+  order: MyInteger
