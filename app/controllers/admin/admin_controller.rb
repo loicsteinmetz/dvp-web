@@ -4,5 +4,6 @@ class Admin::AdminController < ApplicationController
 
   def dashboard
     @title = 'DVP Web | Dashboard'
+    @contents = Content.all
   end
 end
