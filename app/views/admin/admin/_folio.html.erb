@@ -1,0 +1,30 @@
+<p><a href='#' class='btn btn-primary mb-4'>Ajouter un projet</a></p> <!-- modal -->
+
+<% @folios.each do |folio| %>
+
+  <div class='folio row mt-4'>
+    <div class="col-md-4 text-right">
+      <%= image_tag(folio.capture, class: 'mb-4 rounded') %>
+      <a href='#' class='btn btn-sm btn-danger d-none'>modifier</a><!-- modal -->
+    </div>
+    <div class='col-md-7'>
+      <div class="card w-100 px-5">
+        <div class="row">
+            <div class="card-body">
+              <h4 class="card-title"><%= folio.title %></h4>
+              <a><a href=<%= folio.website %>><small class="card-text"><%= folio.website %></small></a></p>
+              <p class="card-text"><%= folio.description %></p>
+              <p><small class="card-text"><%= folio.description_mini %></small></p>
+              <p><small class="card-text"><%= folio.techs %></small></p>
+              <p><small class="card-text"><%= folio.work %></small></p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-1 align-center pt-5'>
+      <p><a href='#' class='btn btn-secondary d-none'>&#9650;</a></p>
+      <p><a href='#' class='btn btn-secondary d-none'>&#9660;</a></p>
+    </div>
+  </div>
+
+<% end %>

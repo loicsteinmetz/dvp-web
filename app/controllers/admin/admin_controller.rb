@@ -5,5 +5,6 @@ class Admin::AdminController < ApplicationController
   def dashboard
     @title = 'DVP Web | Dashboard'
     @contents = Content.all
+    @folios = Folio.all
   end
 end

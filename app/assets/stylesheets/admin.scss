@@ -23,6 +23,6 @@ a.btn{
   font-weight: normal;
 }
 
-.content:hover a.btn-danger {
+.content:hover a.btn-danger, .folio:hover a.btn-danger, .folio:hover a.btn-secondary{
   display: inline !important;
 }
