@@ -3,7 +3,7 @@
 one:
   title: MyString
   website: MyString
-  type: 
+  work: 
   description: MyText
   techs: MyText
   description_mini: MyText
@@ -11,7 +11,7 @@ one:
 two:
   title: MyString
   website: MyString
-  type: 
+  work: 
   description: MyText
   techs: MyText
   description_mini: MyText
