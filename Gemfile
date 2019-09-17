@@ -72,3 +72,5 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
 # Dotenv
 gem 'dotenv-rails'
+# Devise
+gem 'devise'

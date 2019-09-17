@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   root to: 'static#home'
   get 'home', to: 'static#home'
   # get '/portfolio', to: 'static#portfolio'
