@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins
   root to: 'static#home'
   get 'home', to: 'static#home'
   # get '/portfolio', to: 'static#portfolio'
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
   post '/mail', to: 'mailer#contact_email'
   namespace :admin do
     root to: 'admin#dashboard'
+    devise_for :admins
     resources :contents, only: [:update]
     resources :folios, only: [:update]
     resources :cv_entries, only: [:update]
