@@ -4,7 +4,7 @@ RSpec.describe CvEntry, type: :model do
 
   before(:each) do 
     @time = TimeCv.create(date:'2012')
-    @entry = CvEntry.create(date: @time, title: "DUT informatique", sub: "IUT Nancy Charlemagne", order: 0)
+    @entry = CvEntry.create(date: @time, title: "DUT informatique", sub: "IUT Nancy Charlemagne")
   end
 
   context "validations" do
@@ -15,29 +15,22 @@ RSpec.describe CvEntry, type: :model do
     end
     describe "time" do
       it "should not be valid without date" do
-        bad_entry = CvEntry.create(title: "DUT informatique", sub: "IUT Nancy Charlemagne", order: 0)
+        bad_entry = CvEntry.create(title: "DUT informatique", sub: "IUT Nancy Charlemagne")
         expect(bad_entry).not_to be_valid
         expect(bad_entry.errors.include?(:date)).to eq(true)
       end
     end
     describe "title" do
       it "should not be valid without title" do
-        bad_entry = CvEntry.create(date: @time, sub: "IUT Nancy Charlemagne", order: 0)
+        bad_entry = CvEntry.create(date: @time, sub: "IUT Nancy Charlemagne")
         expect(bad_entry).not_to be_valid
         expect(bad_entry.errors.include?(:title)).to eq(true)
       end
       it "should not be valid with a title which is not unique" do
-        CvEntry.create(title: "DUT informatique", date: @time, sub: "IUT Nancy Charlemagne", order: 0)
-        bad_entry = CvEntry.create(title: "DUT informatique", date: @time, sub: "IUT Nancy Charlemagne", order: 0)
-        expect(bad_entry).not_to be_valid
-        expect(bad_entry.errors.include?(:title)).to eq(true)
-      end
-    end
-    describe "order" do
-      it "should not be valid without order" do
+        CvEntry.create(title: "DUT informatique", date: @time, sub: "IUT Nancy Charlemagne")
         bad_entry = CvEntry.create(title: "DUT informatique", date: @time, sub: "IUT Nancy Charlemagne")
         expect(bad_entry).not_to be_valid
-        expect(bad_entry.errors.include?(:order)).to eq(true)
+        expect(bad_entry.errors.include?(:title)).to eq(true)
       end
     end
 
@@ -67,14 +60,6 @@ RSpec.describe CvEntry, type: :model do
       end
       it 'should return the sub' do
         expect(@entry.sub).to eq('IUT Nancy Charlemagne')
-      end
-    end
-    describe "CvEntry.order" do
-      it 'should return an integer' do
-        expect(@entry.order).to be_a(Integer)
-      end
-      it 'should return the order' do
-        expect(@entry.order).to eq(0)
       end
     end
   end

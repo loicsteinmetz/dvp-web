@@ -20,19 +20,19 @@ Content.create(name: "competences-2", title: "back end", body: "Lorem ipsum dolo
 Content.create(name: "competences-3", title: "gestion de projet / design", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras adipiscing enim eu. Lacinia quis vel eros donec.")
 
 TimeCv.destroy_all
-TimeCv.create(date: "depuis 2019")
-TimeCv.create(date: "2019")
-TimeCv.create(date: "2017")
-TimeCv.create(date: "2016")
-TimeCv.create(date: "2012")
+TimeCv.create(date: "depuis 2019", order: 0)
+TimeCv.create(date: "2019", order: 1)
+TimeCv.create(date: "2017", order: 2)
+TimeCv.create(date: "2016", order: 3)
+TimeCv.create(date: "2012", order: 4)
 
 CvEntry.destroy_all
-CvEntry.create(date: TimeCv.find_by(date: "depuis 2019"), title: "DUT informatique", sub: "IUT Nancy Charlemagne", order: 0)
-CvEntry.create(date: TimeCv.find_by(date: "depuis 2019"), title: "Développement freelance", order: 1)
-CvEntry.create(date: TimeCv.find_by(date: "2019"), title: "The Hacking Project", sub: "Bootcamp", order: 2)
-CvEntry.create(date: TimeCv.find_by(date: "2017"), title: "Maîtrise de philosophie", sub: "Université Paris-Sorbonne", order: 3)
-CvEntry.create(date: TimeCv.find_by(date: "2016"), title: "Licence de philosophie", sub: "Université Paris-Sorbonne", order: 4)
-CvEntry.create(date: TimeCv.find_by(date: "2012"), title: "Baccalauréat ES", sub: "Mention Très Bien", order: 5)
+CvEntry.create(date: TimeCv.find_by(date: "depuis 2019"), title: "DUT informatique", sub: "IUT Nancy Charlemagne")
+CvEntry.create(date: TimeCv.find_by(date: "depuis 2019"), title: "Développement freelance")
+CvEntry.create(date: TimeCv.find_by(date: "2019"), title: "The Hacking Project", sub: "Bootcamp")
+CvEntry.create(date: TimeCv.find_by(date: "2017"), title: "Maîtrise de philosophie", sub: "Université Paris-Sorbonne")
+CvEntry.create(date: TimeCv.find_by(date: "2016"), title: "Licence de philosophie", sub: "Université Paris-Sorbonne")
+CvEntry.create(date: TimeCv.find_by(date: "2012"), title: "Baccalauréat ES", sub: "Mention Très Bien")
 
 Folio.destroy_all
 5.times do |n|
