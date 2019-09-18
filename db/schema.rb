@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_110730) do
+ActiveRecord::Schema.define(version: 2019_09_18_061926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,13 @@ ActiveRecord::Schema.define(version: 2019_09_17_110730) do
   end
 
   create_table "cv_entries", force: :cascade do |t|
-    t.string "time"
     t.string "title"
     t.string "sub"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "order"
+    t.bigint "date_id"
+    t.index ["date_id"], name: "index_cv_entries_on_date_id"
   end
 
   create_table "folios", force: :cascade do |t|
@@ -75,6 +76,12 @@ ActiveRecord::Schema.define(version: 2019_09_17_110730) do
     t.datetime "updated_at", null: false
     t.string "work"
     t.integer "order"
+  end
+
+  create_table "time_cvs", force: :cascade do |t|
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
