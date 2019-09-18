@@ -6,5 +6,6 @@ class Admin::AdminController < ApplicationController
     @title = 'DVP Web | Dashboard'
     @contents = Content.all
     @folios = Folio.all
+    @times = TimeCv.all
   end
 end
