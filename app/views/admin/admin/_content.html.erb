@@ -1,11 +1,11 @@
 <% @contents.each do |content| %>
 
   <div class='row content mt-3'>
-    <div class='col-2 text-right'>
+    <div class='col-lg-2 text-lg-right'>
       <h3 class='pt-4 m-2 text-dark'><%= content.name %></h3>
-      <a href=<%= edit_admin_content_path(id: content.id) %> class='btn btn-sm btn-danger d-none mr-1' data-remote='true'>modifier</a> <!-- launches modal -->
+      <a href=<%= edit_admin_content_path(id: content.id) %> class='btn btn-sm btn-danger d-lg-none d-inline mr-1' data-remote='true'>modifier</a> <!-- launches modal -->
     </div>
-    <div class='col-10'>
+    <div class='col-lg-10 mt-lg-0 mt-4'>
       <div class='card p-4'>
         <% if !content.title.nil? %>
           <h4 class='text-dark'><%= content.title %></h4>
