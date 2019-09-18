@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'admin#dashboard'
     devise_for :admins
-    resources :contents, only: [:update]
+    resources :contents, only: [:update, :edit]
     resources :folios, only: [:update]
     resources :cv_entries, only: [:update]
   end

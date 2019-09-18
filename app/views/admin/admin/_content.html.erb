@@ -3,7 +3,7 @@
   <div class='row content mt-3'>
     <div class='col-2 text-right'>
       <h3 class='pt-4 m-2 text-dark'><%= content.name %></h3>
-      <a href='#' class='btn btn-sm btn-danger d-none mr-1'>modifier</a> <!-- launches modal -->
+      <a href=<%= edit_admin_content_path(id: content.id) %> class='btn btn-sm btn-danger d-none mr-1' data-remote='true'>modifier</a> <!-- launches modal -->
     </div>
     <div class='col-10'>
       <div class='card p-4'>
