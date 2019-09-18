@@ -26,7 +26,4 @@
 Are tested :
 - Mailer
 - Models
-- Admin controller
-- Dashboard view
-- Static controller
-- Home and Portfolio views
+- Controllers
