@@ -4,16 +4,18 @@
       <%= image_tag('responsive', alt: 'Responsive') %>
     </div>
     <div class='col-lg-5 px-md-5 d-flex justify-content-center flex-column text-lg-left text-center mt-lg-0 mt-4' id='hero-1'>
-      <h1 class='text-dark'>un site responsive</h1>
+      <h1 class='text-dark'><%= @contents[0].title %></h1>
       <p class='text-secondary mt-3'>
-      Faîtes développer tout ou partie de votre site. Avec ou sans maquette prédéfinie, je saurai le cas échéant mettre en oeuvre un visuel qui puisse répondre à vos attentes, ou vous conseiller sur les directions possibles. Respectant les standards des sites modernes, je saurai adapter le votre aux exigences actuelles des utilisateurs, notamment en termes de design, de dynamisme et d'adaptation au mobile.</p>
+      <%= @contents[0].body %>
+      </p>
     </div>
   </div>
   <div class="row bg-light py-5 row-fluid" id='hero-2'>
     <div class='col-lg-5 px-md-5 d-flex justify-content-center flex-column text-lg-right text-center mt-lg-0 mt-5'>
-      <h1 class='text-dark'>des solutions optimisées</h1>
+      <h1 class='text-dark'><%= @contents[1].title %></h1>
       <p class='text-secondary mt-3'>
-      Présentation de vos activités, plateforme sociale, boutique en ligne ? Je me tiens à votre disposition pour adapter les fonctionnalités de votre site à vos besoins particuliers. Ainsi, nous pourrons travailler ensemble à optimiser votre site dans le sens de vos objectifs, y intégrant par exemple des outils de gestion de contenu, une interface administrateur, mais encore, et surtout, toutes les fonctionnalités qui pourraient profiter à vos utilisateurs.</p>
+      <%= @contents[1].body %>
+      </p>
     </div>
     <div class='col-lg-7 px-lg-5 d-flex justify-content-center flex-column'>
       <%= image_tag('workflow', alt: 'Workflow') %>

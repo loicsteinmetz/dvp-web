@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
   def home
     @title = 'DVP Web | Loïc Steinmetz, développeur freelance'
+    @contents = Content.order(id: :asc)
   end
 
   def portfolio
