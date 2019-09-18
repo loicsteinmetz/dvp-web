@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe StaticController, type: :controller do
 
   describe "GET home" do
+    it "assigns @contents" do
+      content = Content.create(name: "hero-1", title: "un site responsive", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+      get :home
+      expect(assigns(:contents)).to eq([content])
+    end
     it "renders the home template" do
       get :home
       expect(response).to render_template("home")
