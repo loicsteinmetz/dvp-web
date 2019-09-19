@@ -1,17 +1,17 @@
-<p><a href=<%= new_admin_time_cv_path %> class='btn btn-primary mb-4' data-remote='true'>Ajouter une date</a></p> <!-- modal -->
+<p><a href=<%= new_admin_time_cv_path %> class='btn btn-primary mb-4' data-remote='true'>ajouter une date</a></p> <!-- modal -->
 <div id='cv_entries'>
   
   <% @times.each do |time| %>
   
-  <div class='date mb-3'>
+  <div class='date date-<%= time.id %> mb-3'>
     <div class='row'>
         <div class='col-lg-6'>
           <h2 class='m-0 mt-1 mb-lg-0 mb-3'><%= time.date %></h2>
         </div>
         <div class='col-lg-6 text-lg-right'>
           <p class='m-0'>
-            <a href='#' class='btn btn-danger mb-4 d-lg-none d-inline mr-3 sup'>Supprimer</a><!-- modal -->
-            <a href='#' class='btn btn-primary mb-4 d-lg-none d-inline'>Ajouter une entrée</a><!-- modal -->
+            <a href=<%= edit_admin_time_cv_path(id: time.id) %> class='btn btn-danger mb-4 d-lg-none d-inline mr-3 sup' data-remote='true'>modifier</a><!-- modal -->
+            <a href='#' class='btn btn-primary mb-4 d-lg-none d-inline'>ajouter une entrée</a><!-- modal -->
           </p> 
         </div>
     </div>

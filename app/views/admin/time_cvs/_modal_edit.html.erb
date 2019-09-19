@@ -1,0 +1,18 @@
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <%= form_tag(admin_time_cv_path(id: time.id), method:'put', remote: true) do %>
+          <div class='form-group'>
+            <%= text_field_tag 'date', time.date, class: 'form-control', focus: true %>
+          </div>
+          <button id='quit_modal' type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">annuler</button>
+          <a href=<%= admin_time_cv_path(id: time.id) %> data-method='delete' data-remote='true' data-confirm='Supprimer ?' type="button" class="btn btn-sm btn-danger">supprimer</a>
+          <%= submit_tag 'modifier', class: 'btn btn-sm btn-success' %>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>

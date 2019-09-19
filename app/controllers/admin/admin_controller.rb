@@ -6,6 +6,6 @@ class Admin::AdminController < ApplicationController
     @title = 'DVP Web | Dashboard'
     @contents = Content.order(id: :asc)
     @folios = Folio.all
-    @times = TimeCv.all
+    @times = TimeCv.all.order(order: :asc)
   end
 end

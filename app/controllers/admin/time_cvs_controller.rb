@@ -19,4 +19,32 @@ class Admin::TimeCvsController < ApplicationController
       format.js {}
     end
   end
+
+  def edit
+    @time = TimeCv.find(params[:id])
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
+  def update
+    @time = TimeCv.find(params[:id])
+    update = params.permit(:date)
+    if @time.update(update)
+      @valid = true
+    else
+      flash[:alert] = 'Error'
+    end
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
+  def destroy
+    @time = TimeCv.find(params[:id])
+    @time.destroy
+    respond_to do |format|
+      format.js {}
+    end
+  end
 end

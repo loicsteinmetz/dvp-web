@@ -1,0 +1,7 @@
+<% if @valid == true %>
+  $('.date-<%= @time.id %> h2').html("<%= @time.date %>");
+  quitModal();
+<% else %>
+  $('.alert').remove();
+  $('.modal-body').prepend("<%= j render 'flash_new' %>");
+<% end %>

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :contents, only: [:update, :edit]
     resources :folios, only: [:update]
     resources :cv_entries, only: [:update]
-    resources :time_cvs, only: [:new, :create]
+    resources :time_cvs, except: [:index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
