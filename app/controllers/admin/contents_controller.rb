@@ -1,4 +1,6 @@
 class Admin::ContentsController < ApplicationController
+
+  before_action :authenticate_admin_admin!
   
   def edit
     @content = Content.find(params[:id])

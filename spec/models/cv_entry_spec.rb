@@ -13,6 +13,11 @@ RSpec.describe CvEntry, type: :model do
       expect(@entry).to be_a(CvEntry)
       expect(@entry).to be_valid
     end
+
+    it 'should belongs to CvTime' do
+      expect(@entry.date).not_to eq(nil)
+    end
+
     describe "time" do
       it "should not be valid without date" do
         bad_entry = CvEntry.create(title: "DUT informatique", sub: "IUT Nancy Charlemagne")

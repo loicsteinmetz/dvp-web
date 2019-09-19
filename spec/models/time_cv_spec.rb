@@ -12,6 +12,11 @@ RSpec.describe TimeCv, type: :model do
       expect(@time).to be_a(TimeCv)
       expect(@time).to be_valid
     end
+
+    it 'should has many CvEntries' do
+      expect(@time.entries).not_to eq(nil)
+    end
+
     describe "date" do
       it "should not be valid without date" do
         bad_time = TimeCv.create(order: 0)
