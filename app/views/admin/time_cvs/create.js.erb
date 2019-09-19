@@ -1,0 +1,7 @@
+<% if @valid == true %>
+  $('#cv_entries').append("<%= j render 'new_date', time: @time %>");
+  quitModal();
+<% else %>
+  $('.alert').remove();
+  $('.modal-body').prepend("<%= j render 'flash_new' %>");
+<% end %>

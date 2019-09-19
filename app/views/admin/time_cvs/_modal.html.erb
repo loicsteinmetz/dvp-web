@@ -1,0 +1,17 @@
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <%= form_tag(admin_time_cvs_path, method:'post', remote: true) do %>
+          <div class='form-group'>
+            <%= text_field_tag 'date', nil, placeholder: 'Nouvelle période', class: 'form-control', autofocus: true %>
+          </div>
+          <button id='quit_modal' type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">annuler</button>
+          <%= submit_tag 'ajouter', class: 'btn btn-sm btn-success' %>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>
