@@ -46,6 +46,16 @@ RSpec.describe TimeCv, type: :model do
 
   end
 
+  context "associations" do
+    describe "asso with cv_entry" do
+      it 'should destroy associated cv_entries when one time_cv is destroyed' do
+        to_destroy = CvEntry.create(date: @time, title: 'example')
+        @time.destroy
+        expect(CvEntry.last).to be_nil
+      end
+    end
+  end
+
   context "public instance methods" do
 
     describe "TimeCv.date" do
