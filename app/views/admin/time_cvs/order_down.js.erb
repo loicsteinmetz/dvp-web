@@ -1,0 +1,3 @@
+<% if @valid %>
+  $('#cv_entries').children()[<%= @valid %>].before($('#cv_entries').children()[<%= @valid + 1 %>]);
+<% end %>

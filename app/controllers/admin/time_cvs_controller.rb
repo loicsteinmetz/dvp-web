@@ -47,4 +47,33 @@ class Admin::TimeCvsController < ApplicationController
       format.js {}
     end
   end
+
+  def order_up
+    @time = TimeCv.find(params[:id])
+    unless @time.first_place?
+      time_ref = @time.order
+      @time.update(order: -1)
+      TimeCv.reorder_down(time_ref)
+      @time.update(order: time_ref - 1)
+      @valid = time_ref
+    end
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
+  def order_down
+    @time = TimeCv.find(params[:id])
+    unless @time.last_place?
+      time_ref = @time.order
+      @time.update(order: -1)
+      TimeCv.reorder_up(time_ref)
+      @time.update(order: time_ref + 1)
+      @valid = time_ref
+    end
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
 end
