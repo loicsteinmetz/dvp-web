@@ -1,4 +1,7 @@
 class Admin::TimeCvsController < ApplicationController
+
+  before_action :authenticate_admin_admin!
+
   def new
     respond_to do |format|
       format.js {}

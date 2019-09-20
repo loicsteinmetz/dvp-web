@@ -18,6 +18,7 @@ RSpec.describe Admin::AdminController, type: :controller do
         expect(assigns(:contents)).to eq([content])
       end
       it "assigns @times" do
+        TimeCv.destroy_all
         time = TimeCv.create(date: "depuis 2019", order: 0)
         sign_in admin
         get :dashboard
