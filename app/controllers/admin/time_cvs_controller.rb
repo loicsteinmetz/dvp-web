@@ -9,11 +9,10 @@ class Admin::TimeCvsController < ApplicationController
   end
 
   def create
-    cv_time = TimeCv.new(date: params[:date])
-    cv_time.order = TimeCv.set_new_order;
-    if cv_time.save
+    time_cv = TimeCv.new(date: params[:date])
+    if time_cv.save
       flash[:alert] = nil
-      @time = cv_time
+      @time = time_cv
       @valid = true
     else
       flash[:alert] = 'Erreur'
@@ -54,11 +53,9 @@ class Admin::TimeCvsController < ApplicationController
   def order_up
     @time = TimeCv.find(params[:id])
     unless @time.first_place?
-      time_ref = @time.order
-      @time.update(order: -1)
-      TimeCv.reorder_down(time_ref)
-      @time.update(order: time_ref - 1)
-      @valid = time_ref
+      @valid = @time.order
+      TimeCv.where(order: @time.order - 1).update(order: @time.order)
+      @time.update(order: @time.order - 1)
     end
     respond_to do |format|
       format.js {}
@@ -68,11 +65,9 @@ class Admin::TimeCvsController < ApplicationController
   def order_down
     @time = TimeCv.find(params[:id])
     unless @time.last_place?
-      time_ref = @time.order
-      @time.update(order: -1)
-      TimeCv.reorder_up(time_ref)
-      @time.update(order: time_ref + 1)
-      @valid = time_ref
+      @valid = @time.order
+      TimeCv.where(order: @time.order + 1).update(order: @time.order)
+      @time.update(order: @time.order + 1)
     end
     respond_to do |format|
       format.js {}

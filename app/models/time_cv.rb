@@ -3,12 +3,14 @@ class TimeCv < ApplicationRecord
     presence: true,
     uniqueness: true
   validates :order,
-    presence: true,
-    uniqueness: true
+    presence: true
   has_many :entries, foreign_key: 'date', class_name: 'CvEntry', dependent: :destroy
 
-  def self.set_new_order
-    return TimeCv.all.size
+  before_validation :set_new_order, on: :create
+  after_destroy :reorder_after_destroy
+
+  def set_new_order
+    self.order ||= TimeCv.count
   end
 
   def first_place?
@@ -19,11 +21,12 @@ class TimeCv < ApplicationRecord
     self.order == TimeCv.all.size - 1
   end
 
-  def self.reorder_down(ref)
-    TimeCv.where(order: ref - 1).update(order: ref)
-  end
-
-  def self.reorder_up(ref)
-    TimeCv.where(order: ref + 1).update(order: ref)
+  def reorder_after_destroy
+    TimeCv.all.each do |time|
+      new_order = time.order - 1
+      if time.order > self.order
+        time.update(order: new_order)
+      end
+    end
   end
 end
