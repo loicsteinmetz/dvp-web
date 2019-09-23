@@ -1,0 +1,7 @@
+<% if @valid == true %>
+  $('#entries').append("<%= j render 'new_entry', entry: @entry %>");
+  quitModal();
+<% else %>
+  $('.alert').remove();
+  $('.modal-body').prepend("<%= j render 'flash_new' %>");
+<% end %>

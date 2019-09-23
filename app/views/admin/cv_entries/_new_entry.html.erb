@@ -1,0 +1,9 @@
+<div class='entry mb-3 entry-<%= entry.id %>'>
+  <div class='d-flex'>
+    <h3 class='m-0'><%= entry.title %></h3>
+    <p class='m-0'><a href=<%= edit_admin_cv_entry_path(id: entry.id) %> data-remote='true' class='btn btn-danger btn-sm ml-3 mb-0 d-lg-none d-inline'>Modifier</a></p> <!-- modal -->
+  </div>
+  <% if !entry.sub.nil? %>
+    <p class='m-0'><small><%= entry.sub %></small></p>
+  <% end %>
+</div>

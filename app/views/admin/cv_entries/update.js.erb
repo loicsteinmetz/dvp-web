@@ -1,0 +1,12 @@
+<% if @valid == true %>
+  $('.entry-<%= @entry.id %> h3').html("<%= @entry.title %>");
+  <% if !@entry.sub.nil? && @entry.sub != "" %>
+    $('.entry-<%= @entry.id %> .d-flex').after("<p class='m-0'><small><%= @entry.sub %></small></p>");
+  <% else %>
+    $('.entry-<%= @entry.id %> > p').remove();
+  <% end %>
+  quitModal();
+<% else %>
+  $('.alert').remove();
+  $('.modal-body').prepend("<%= j render 'flash_new' %>");
+<% end %>

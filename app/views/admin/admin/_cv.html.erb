@@ -11,22 +11,22 @@
         <div class='col-lg-6 text-lg-right'>
           <p class='m-0'>
             <a href=<%= edit_admin_time_cv_path(id: time.id) %> class='btn btn-danger mb-4 d-lg-none d-inline mr-3 sup' data-remote='true'>modifier</a><!-- modal -->
-            <a href='#' class='btn btn-primary mb-4 d-lg-none d-inline'>ajouter une entrée</a><!-- modal -->
+            <a href=<%= new_admin_cv_entry_path(date: time.id) %> data-remote='true' class='btn btn-primary mb-4 d-lg-none d-inline'>ajouter une entrée</a><!-- modal -->
           </p> 
         </div>
     </div>
     <hr class=''>
     <div class='row mb-3'>
-      <div class='col-11 mb-3'>
+      <div class='col-11 mb-3' id='entries'>
         <% time.entries.each do |entry| %>
     
-          <div class='entry'>
+          <div class='entry mb-3 entry-<%= entry.id %>'>
             <div class='d-flex'>
               <h3 class='m-0'><%= entry.title %></h3>
-              <p class='m-0'><a href='#' class='btn btn-danger btn-sm ml-3 mb-0 d-lg-none d-inline'>Modifier</a></p> <!-- modal -->
+              <p class='m-0'><a href=<%= edit_admin_cv_entry_path(id: entry.id) %> data-remote='true' class='btn btn-danger btn-sm ml-3 mb-0 d-lg-none d-inline'>Modifier</a></p> <!-- modal -->
             </div>
             <% if !entry.sub.nil? %>
-              <p><small><%= entry.sub %></small></p>
+              <p class='m-0'><small><%= entry.sub %></small></p>
             <% end %>
           </div>
     

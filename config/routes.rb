@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     devise_for :admins
     resources :contents, only: [:update, :edit]
     resources :folios, only: [:update]
-    resources :cv_entries, only: [:update]
+    resources :cv_entries, except: [:index]
     resources :time_cvs, except: [:index]
     put '/cv_time/:id/order_up', to: 'time_cvs#order_up', as: 'time_cv_order_up'
     put '/cv_time/:id/order_down', to: 'time_cvs#order_down', as: 'time_cv_order_down'
