@@ -1,5 +1,7 @@
 class Admin::CvEntriesController < ApplicationController
 
+  before_action :authenticate_admin_admin!
+
   def new
     @date = params[:date]
     respond_to do |format|
