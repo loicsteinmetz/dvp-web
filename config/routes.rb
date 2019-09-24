@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     root to: 'admin#dashboard'
     devise_for :admins
     resources :contents, only: [:update, :edit]
-    resources :folios, only: [:update]
+    resources :folios, except: [:index]
+    put '/folios/:id/order_up', to: 'folios#order_up', as: 'folios_order_up'
+    put '/folios/:id/order_down', to: 'folios#order_down', as: 'folios_order_down'
     resources :cv_entries, except: [:index]
     resources :time_cvs, except: [:index]
     put '/cv_time/:id/order_up', to: 'time_cvs#order_up', as: 'time_cv_order_up'
