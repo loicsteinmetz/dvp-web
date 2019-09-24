@@ -1,5 +1,5 @@
 <% if @valid == true %>
-  $('#entries').append("<%= j render 'new_entry', entry: @entry %>");
+  $('#entries-<%= @entry.date.id %>').append("<%= j render 'new_entry', entry: @entry %>");
   quitModal();
 <% else %>
   $('.alert').remove();

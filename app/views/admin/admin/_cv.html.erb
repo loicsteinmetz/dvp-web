@@ -17,8 +17,8 @@
     </div>
     <hr class=''>
     <div class='row mb-3'>
-      <div class='col-11 mb-3' id='entries'>
-        <% time.entries.each do |entry| %>
+    <% time.entries.each do |entry| %>
+      <div class='col-11 mb-3' id='entries-<%= time.id %>'>
     
           <div class='entry mb-3 entry-<%= entry.id %>'>
             <div class='d-flex'>
@@ -30,8 +30,8 @@
             <% end %>
           </div>
     
-        <% end %>
       </div>
+      <% end %>
       <div class='col-lg-1'>
         <p><a href=<%= admin_time_cv_order_up_path(id: time.id) %> data-method='put' data-remote='true' class='btn btn-secondary d-lg-none d-inline'>&#9650;</a></p>
         <p><a href=<%= admin_time_cv_order_down_path(id: time.id) %> data-method='put' data-remote='true' class='btn btn-secondary d-lg-none d-inline'>&#9660;</a></p>

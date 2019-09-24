@@ -5,8 +5,10 @@
         <div class='alert alert-danger'>
           <p>Le message n'a pas pu être envoyé :</p>
           <ul class='my-0 py-0'>
-            <% flash[:alert].each do |alert| %>
-              <li><%= alert %></li>
+            <% if flash[:alert].class == Array %>
+              <% flash[:alert].each do |alert| %>
+                <li><%= alert %></li>
+              <% end %>
             <% end %>
           </ul>
         </div>
