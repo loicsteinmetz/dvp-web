@@ -1,0 +1,5 @@
+let folio = $('.folio-<%= @folio.id %>').parent().parent().parent().parent()
+folio.remove();
+folio.next().remove();
+
+quitModal();

@@ -1,0 +1,36 @@
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <%= form_tag(admin_folio_path(id: folio.id), method:'put', remote: true, multipart: true) do %>
+          <div class='form-group'>
+            <%= text_field_tag 'title', folio.title, placeholder: 'Titre', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_field_tag 'website', folio.website, placeholder: 'URL', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= file_field_tag 'capture', class: 'form-control-file' %>
+          </div>
+          <div class='form-group'>
+            <%= text_area_tag 'description', folio.description, placeholder: 'Description', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_field_tag 'techs', folio.techs, placeholder: 'Technologies', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_area_tag 'description_mini', folio.description_mini, placeholder: 'Description (mini)', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_area_tag 'work', folio.work, placeholder: 'Travail réalisé', class: 'form-control', autofocus: true %>
+          </div>
+          <button id='quit_modal' type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">annuler</button>
+          <a href=<%= admin_folio_path(id: folio.id) %> data-method='delete' data-remote='true' data-confirm='Supprimer ?' type="button" class="btn btn-sm btn-danger">supprimer</a>
+          <%= submit_tag 'modifier', class: 'btn btn-sm btn-success' %>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>

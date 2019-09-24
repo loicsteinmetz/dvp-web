@@ -1,0 +1,14 @@
+<% if @valid == true %>
+  $('.folio-<%= @folio.id %> h4').html("<%= @folio.title %>");
+  $('.folio-<%= @folio.id %> a').html("<%= @folio.website %>");
+  $('.folio-<%= @folio.id %> a').attr("href", "<%= @folio.website %>");
+  $('.folio-<%= @folio.id %> .desc').html("<%= @folio.description %>");
+  $('.folio-<%= @folio.id %> .sm1').html("<%= @folio.description_mini %>");
+  $('.folio-<%= @folio.id %> .sm2').html("<%= @folio.techs %>");
+  $('.folio-<%= @folio.id %> .sm3').html("<%= @folio.work %>");
+  $('.capture-<%= @folio.id %> img').replaceWith("<%= j image_tag(@folio.capture, class: 'mb-4 rounded capture') %>");
+  quitModal();
+<% else %>
+  $('.alert').remove();
+  $('.modal-body').prepend("<%= j render 'flash_new' %>");
+<% end %>
