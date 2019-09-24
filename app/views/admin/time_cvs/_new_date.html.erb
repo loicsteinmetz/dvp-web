@@ -12,7 +12,6 @@
     </div>
     <hr class=''>
     <div class='row mb-3'>
-      <div class='col-11 mb-3'>
       <div class='col-11 mb-3' id='entries-<%= time.id %>'>
 
       <% time.entries.each do |entry| %>
@@ -29,7 +28,6 @@
 
         <% end %>
     
-        </div>
       </div>
       <div class='col-lg-1'>
         <p><a href=<%= admin_time_cv_order_up_path(id: time.id) %> data-method='put' data-remote='true' class='btn btn-secondary d-lg-none d-inline'>&#9650;</a></p>
