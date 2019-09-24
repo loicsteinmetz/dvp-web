@@ -14,7 +14,6 @@ class Admin::FoliosController < ApplicationController
       @folio = folio
       @valid = true
     else
-      puts '==================', folio.errors.full_messages
       flash[:alert] = 'Erreur'
     end
     respond_to do |format|
