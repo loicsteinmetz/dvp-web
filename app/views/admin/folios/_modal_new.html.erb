@@ -1,0 +1,35 @@
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <%= form_tag(admin_folios_path, method:'post', remote: true, multipart: true) do %>
+          <div class='form-group'>
+            <%= text_field_tag 'title', nil, placeholder: 'Titre', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_field_tag 'website', nil, placeholder: 'URL', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= file_field_tag 'capture', class: 'form-control-file' %>
+          </div>
+          <div class='form-group'>
+            <%= text_area_tag 'desc', nil, placeholder: 'Description', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_field_tag 'techs', nil, placeholder: 'Technologies', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_area_tag 'desc_mini', nil, placeholder: 'Description (mini)', class: 'form-control', autofocus: true %>
+          </div>
+          <div class='form-group'>
+            <%= text_area_tag 'work', nil, placeholder: 'Travail réalisé', class: 'form-control', autofocus: true %>
+          </div>
+          <button id='quit_modal' type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">annuler</button>
+          <%= submit_tag 'ajouter', class: 'btn btn-sm btn-success' %>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,6 @@ class Admin::TimeCvsController < ApplicationController
   before_action :authenticate_admin_admin!
 
   def new
-    @date = params[:date]
     respond_to do |format|
       format.js { }
     end

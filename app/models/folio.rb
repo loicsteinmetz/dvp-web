@@ -11,6 +11,7 @@ class Folio < ApplicationRecord
   has_one_attached :capture
   validate :capture?
   validate :img_validation
+  before_validation :set_new_order, on: :create
 
   private
 
@@ -25,5 +26,9 @@ class Folio < ApplicationRecord
         errors[:capture] << 'Wrong format for your image'
       end
     end
+  end
+
+  def set_new_order
+    self.order ||= Folio.count
   end
 end

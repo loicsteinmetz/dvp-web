@@ -1,0 +1,7 @@
+<% if @valid == true %>
+  $('#folios').append("<%= j render 'new_folio', folio: @folio %>");
+  quitModal();
+<% else %>
+  $('.alert').remove();
+  $('.modal-body').prepend("<%= j render 'flash_new' %>");
+<% end %>

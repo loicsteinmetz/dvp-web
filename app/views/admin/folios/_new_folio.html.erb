@@ -1,9 +1,4 @@
-<p><a href=<%= new_admin_folio_path %> data-remote='true' class='btn btn-primary mb-4'>Ajouter un projet</a></p> <!-- modal -->
-<div id='folios'>
-  
-  <% @folios.each do |folio| %>
-  
-    <div class='folio row mt-4'>
+<div class='folio row mt-4'>
       <div class="col-lg-4 text-right">
         <%= image_tag(folio.capture, class: 'mb-4 rounded') %>
         <a href='#' class='btn btn-sm btn-danger d-lg-none d-inline'>modifier</a><!-- modal -->
@@ -28,7 +23,3 @@
       </div>
     </div>
     <hr>
-  
-  <% end %>
-  
-</div>
