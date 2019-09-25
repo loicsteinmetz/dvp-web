@@ -5,9 +5,9 @@
   
     <div>
       <div class='folio row mt-4'>
-        <div class="col-lg-4 text-right capture-<%= folio.id %>">
-          <%= image_tag(folio.capture, class: 'mb-4 rounded capture') %>
-          <a href=<%= edit_admin_folio_path(id: folio.id) %> data-remote='true' class='btn btn-sm btn-danger d-lg-none d-inline'>modifier</a><!-- modal -->
+        <div class="col-lg-4 text-right capture-<%= folio.id %> d-flex flex-column">
+          <%= image_tag(folio.capture, class: 'mb-4 rounded capture order-lg-1 order-2') %>
+          <p class='d-inline order-lg-2 order-1'><a href=<%= edit_admin_folio_path(id: folio.id) %> data-remote='true' class='btn btn-sm btn-danger d-lg-none d-inline'>modifier</a></p><!-- modal -->
         </div>
         <div class='col-lg-7 mt-lg-0 mt-3'>
           <div class="card w-100 px-sm-5 px-2">
@@ -23,7 +23,7 @@
             </div>
           </div>
         </div>
-        <div class='col-lg-1 align-center pt-5'>
+        <div class='col-lg-1 align-center pt-lg-5 pt-4'>
           <p><a href=<%= admin_folios_order_up_path(id: folio.id) %> data-remote='true' data-method='put' class='btn btn-secondary d-lg-none d-inline'>&#9650;</a></p>
           <p><a href=<%= admin_folios_order_down_path(id: folio.id) %> data-remote='true' data-method='put' class='btn btn-secondary d-lg-none d-inline'>&#9660;</a></p>
         </div>
