@@ -1,36 +1,22 @@
 <div class='container', id='folio_prev'>
   <h2 class='mt-5 text-secondary text-center'>dernières réalisations</h2>
   <div class="row py-5">
-    <div class='col-lg-4 px-lg-3 px-sm-5 px-3' id='prev-1'>
-      <a href='#'>
+
+  <% @folios.each do |folio| %>
+
+    <div class='col-lg-4 px-lg-3 px-sm-5 px-3' id='prev-<%= folio[0].order + 1 %>'>
+      <a href=<%= folio[0].website %>>
         <figure class="imghvr-fade">
-          <%= image_tag('code', class:'rounded') %>
+          <%= image_tag(folio[0].capture) %>
           <figcaption>
-              Lorem ipsum
+              <%= folio[0].description_mini %>
           </figcaption>
         </figure>
       </a>
     </div>
-    <div class='col-lg-4 px-lg-3 px-sm-5 px-3' id='prev-2'>
-      <a href='#'>
-        <figure class="imghvr-fade mt-lg-0 mt-4">
-          <%= image_tag('code', class:'rounded') %>
-          <figcaption>
-              Lorem ipsum
-          </figcaption>
-        </figure>
-      </a>
-    </div>
-    <div class='col-lg-4 px-lg-3 px-sm-5 px-3' id='prev-3'>
-      <a href='#'>
-        <figure class="imghvr-fade mt-lg-0 mt-4">
-          <%= image_tag('code', class:'rounded') %>
-          <figcaption>
-              Lorem ipsum
-          </figcaption>
-        </figure>
-      </a>
-    </div>
+    
+  <% end %>
+
   </div>
   <a href='/portfolio' class='text-secondary text-decoration-none'><p class='text-center'><strong>- voir plus -</strong></p></a>
   <hr>
