@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'static#home'
   get 'home', to: 'static#home'
-  get '/portfolio', to: 'static#portfolio'
+  # get '/portfolio', to: 'static#portfolio'
   get '/mentions_legales', to: 'static#mentions_legales'
   post '/mail', to: 'mailer#contact_email'
   namespace :admin do
