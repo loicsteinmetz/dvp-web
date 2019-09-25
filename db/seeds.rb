@@ -36,7 +36,7 @@ CvEntry.create(date: TimeCv.find_by(date: "2012"), title: "Baccalauréat ES", su
 
 Folio.destroy_all
 5.times do |n|
-  folio = Folio.new(title: "website#{n}", website: "https://website#{n}.com", work: "Lorem ipsum dolor sit amet", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras adipiscing enim eu. Lacinia quis vel eros donec. Non odio euismod lacinia at quis risus. Eget nulla facilisi etiam dignissim diam quis enim lobortis. Ut diam quam nulla porttitor massa id. Egestas dui id ornare arcu odio. Nisl nisi scelerisque eu ultrices vitae auctor. Fermentum iaculis eu non diam phasellus vestibulum lorem.", techs: "Ruby, JS, Html, Rails, etc...", description_mini: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", order: n)
+  folio = Folio.new(title: "website#{n}", website: "https://website#{n}.com", work: "Lorem ipsum dolor sit amet", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet tellus cras adipiscing enim eu. Lacinia quis vel eros donec. Non odio euismod lacinia at quis risus. Eget nulla facilisi etiam dignissim diam quis enim lobortis. Ut diam quam nulla porttitor massa id. Egestas dui id ornare arcu odio. Nisl nisi scelerisque eu ultrices vitae auctor. Fermentum iaculis eu non diam phasellus vestibulum lorem.", techs: "Ruby, JS, Html, Rails, etc...", description_mini: "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
   folio.capture.attach(io: open("http://placeimg.com/600/400/any"), filename: 'capture.jpeg')
   folio.save
 end

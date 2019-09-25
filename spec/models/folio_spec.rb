@@ -75,15 +75,6 @@ RSpec.describe Folio, type: :model do
         expect(bad_folio.errors.include?(:description_mini)).to eq(true)
       end
     end
-    describe "order" do
-      it "should not be valid without order" do
-        bad_folio = Folio.new(title: "website", website: "https://website.com", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", work: "Lorem ipsum dolor sit amet", techs: "Ruby, JS, Html, Rails, etc...", description_mini: "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
-        bad_folio.capture.attach(io: open("http://placeimg.com/600/400/any"), filename: 'capture.jpeg')
-        bad_folio.save
-        expect(bad_folio).not_to be_valid
-        expect(bad_folio.errors.include?(:order)).to eq(true)
-      end
-    end
     describe "capture" do
       it "should not be valid without capture" do
         bad_folio = Folio.new(title: "website", website: "https://website.com", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", work: "Lorem ipsum dolor sit amet", techs: "Ruby, JS, Html, Rails, etc...", description_mini: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", order: 1)
