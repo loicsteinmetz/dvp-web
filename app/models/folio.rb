@@ -12,6 +12,7 @@ class Folio < ApplicationRecord
   validate :capture?
   validate :img_validation
   before_validation :set_new_order, on: :create
+  after_destroy :reorder_after_destroy
 
   def first_place?
     self.order == 0
@@ -38,5 +39,14 @@ class Folio < ApplicationRecord
 
   def set_new_order
     self.order ||= Folio.count
+  end
+
+  def reorder_after_destroy
+    Folio.all.each do |folio|
+      new_order = folio.order - 1
+      if folio.order > self.order
+        folio.update(order: new_order)
+      end
+    end
   end
 end
