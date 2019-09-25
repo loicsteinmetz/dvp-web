@@ -20,3 +20,10 @@
 ## Experience map
 
 ![XP map](/readme/xpm.png)
+
+## Tests
+
+Are tested :
+- Mailer
+- Models
+- Controllers

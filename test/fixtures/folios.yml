@@ -7,6 +7,7 @@ one:
   description: MyText
   techs: MyText
   description_mini: MyText
+  order: myInteger
 
 two:
   title: MyString
@@ -15,3 +16,4 @@ two:
   description: MyText
   techs: MyText
   description_mini: MyText
+  order: MyInteger
