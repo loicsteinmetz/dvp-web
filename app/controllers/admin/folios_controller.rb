@@ -51,9 +51,27 @@ class Admin::FoliosController < ApplicationController
   end
 
   def order_up
+    @folio = Folio.find(params[:id])
+    unless @folio.first_place?
+      @valid = @folio.order
+      Folio.where(order: @folio.order - 1).update(order: @folio.order)
+      @folio.update(order: @folio.order - 1)
+    end
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   def order_down
+    @folio = Folio.find(params[:id])
+    unless @folio.last_place?
+      @valid = @folio.order
+      Folio.where(order: @folio.order + 1).update(order: @folio.order)
+      @folio.update(order: @folio.order + 1)
+    end
+    respond_to do |format|
+      format.js {}
+    end
   end
 
 end

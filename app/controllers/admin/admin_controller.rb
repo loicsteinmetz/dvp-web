@@ -5,7 +5,7 @@ class Admin::AdminController < ApplicationController
   def dashboard
     @title = 'DVP Web | Dashboard'
     @contents = Content.order(id: :asc)
-    @folios = Folio.all
+    @folios = Folio.order(order: :asc)
     @times = TimeCv.order(order: :asc)
   end
 end

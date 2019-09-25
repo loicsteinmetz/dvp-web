@@ -13,6 +13,14 @@ class Folio < ApplicationRecord
   validate :img_validation
   before_validation :set_new_order, on: :create
 
+  def first_place?
+    self.order == 0
+  end
+
+  def last_place?
+    self.order == Folio.count - 1
+  end
+
   private
 
   def capture?

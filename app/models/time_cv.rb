@@ -18,7 +18,7 @@ class TimeCv < ApplicationRecord
   end
 
   def last_place?
-    self.order == TimeCv.all.size - 1
+    self.order == TimeCv.count - 1
   end
 
   def reorder_after_destroy

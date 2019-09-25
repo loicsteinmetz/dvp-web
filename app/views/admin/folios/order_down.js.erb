@@ -1,0 +1,3 @@
+<% if @valid %>
+  $('.folio-<%= @folio.id %>').parent().parent().parent().parent().parent().insertAfter($('.folio-<%= @folio.id %>').parent().parent().parent().parent().parent().next());
+<% end %>

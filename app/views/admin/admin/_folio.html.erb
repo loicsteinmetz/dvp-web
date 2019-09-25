@@ -3,31 +3,33 @@
   
   <% @folios.each do |folio| %>
   
-    <div class='folio row mt-4'>
-      <div class="col-lg-4 text-right capture-<%= folio.id %>">
-        <%= image_tag(folio.capture, class: 'mb-4 rounded capture') %>
-        <a href=<%= edit_admin_folio_path(id: folio.id) %> data-remote='true' class='btn btn-sm btn-danger d-lg-none d-inline'>modifier</a><!-- modal -->
-      </div>
-      <div class='col-lg-7 mt-lg-0 mt-3'>
-        <div class="card w-100 px-sm-5 px-2">
-          <div class="row">
-              <div class="card-body folio-<%= folio.id %>">
-                <h4 class="card-title"><%= folio.title %></h4>
-                <p><a href=<%= folio.website %>><small class="card-text"><%= folio.website %></small></a></p>
-                <p class="card-text text-secondary desc"><%= folio.description %></p>
-                <p><small class="card-text sm1"><%= folio.description_mini %></small></p>
-                <p><small class="card-text sm2"><%= folio.techs %></small></p>
-                <p><small class="card-text sm3"><%= folio.work %></small></p>
-              </div>
+    <div>
+      <div class='folio row mt-4'>
+        <div class="col-lg-4 text-right capture-<%= folio.id %>">
+          <%= image_tag(folio.capture, class: 'mb-4 rounded capture') %>
+          <a href=<%= edit_admin_folio_path(id: folio.id) %> data-remote='true' class='btn btn-sm btn-danger d-lg-none d-inline'>modifier</a><!-- modal -->
+        </div>
+        <div class='col-lg-7 mt-lg-0 mt-3'>
+          <div class="card w-100 px-sm-5 px-2">
+            <div class="row">
+                <div class="card-body folio-<%= folio.id %>">
+                  <h4 class="card-title"><%= folio.title %></h4>
+                  <p><a href=<%= folio.website %>><small class="card-text"><%= folio.website %></small></a></p>
+                  <p class="card-text text-secondary desc"><%= folio.description %></p>
+                  <p><small class="card-text sm1"><%= folio.description_mini %></small></p>
+                  <p><small class="card-text sm2"><%= folio.techs %></small></p>
+                  <p><small class="card-text sm3"><%= folio.work %></small></p>
+                </div>
+            </div>
           </div>
         </div>
+        <div class='col-lg-1 align-center pt-5'>
+          <p><a href=<%= admin_folios_order_up_path(id: folio.id) %> data-remote='true' data-method='put' class='btn btn-secondary d-lg-none d-inline'>&#9650;</a></p>
+          <p><a href=<%= admin_folios_order_down_path(id: folio.id) %> data-remote='true' data-method='put' class='btn btn-secondary d-lg-none d-inline'>&#9660;</a></p>
+        </div>
       </div>
-      <div class='col-lg-1 align-center pt-5'>
-        <p><a href='#' class='btn btn-secondary d-lg-none d-inline'>&#9650;</a></p>
-        <p><a href='#' class='btn btn-secondary d-lg-none d-inline'>&#9660;</a></p>
-      </div>
+      <hr>
     </div>
-    <hr>
   
   <% end %>
   
